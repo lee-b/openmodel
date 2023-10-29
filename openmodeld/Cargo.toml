@@ -4,7 +4,12 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-oauth2 = "4.4.2"
-aes-gcm = "0.10.3"
 openmodel_backend = { path="../libopenmodel_backend" }
 openmodel_frontend = { path="../libopenmodel_frontend" }
+oauth2 = "4.4.2"
+aes-gcm = "0.10.3"
+structopt = "0.3.26"
+reqwest = "0.11.22"
+serde = { version = "1.0.190", features = ["derive"] }
+serde_json = "1.0.107"
+tokio = { version="1.33.0", features = ["full"] }
