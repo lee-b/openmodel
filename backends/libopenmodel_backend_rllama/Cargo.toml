@@ -1,7 +1,8 @@
 [package]
-name = "openmodel_backend_TEMPLATE"
+name = "openmodel_backend_rllama"
 version = "0.1.0"
 edition = "2021"
 
 [dependencies]
 openmodel_backend = { path="../../libopenmodel_backend" }
+rllama = "0.3.0"

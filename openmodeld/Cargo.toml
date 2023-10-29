@@ -6,3 +6,5 @@ edition = "2021"
 [dependencies]
 oauth2 = "4.4.2"
 aes-gcm = "0.10.3"
+openmodel_backend = { path="../libopenmodel_backend" }
+openmodel_frontend = { path="../libopenmodel_frontend" }
