@@ -1,23 +1,30 @@
 # OpenModel
 
-OpenModel is a generic, local AI API.  Essentially, it is the equivalent of OpenGL or Direct3D, but for AI models rather than 3D.
+OpenModel is a generic, abstract AI interface, for all your generative AI needs.  The intent is to abstract away all of the details of which AI you are using, so that you can build applications and games and utilities and mobile apps on that USE AI, instead of re-implementing an AI engine for every use case.
+
+Think of it like Direct3D, OpenGL, or Vulcan, but for AI.
+
+
+***************** !!!!! THIS IS A WORK IN PROGRESS !!!! *******************
 
 Just as OpenGL or DirectX support various frontend features and multiple backend graphics cards, OpenModel supports various (initially) generative AI and (later) other use AI model types and use cases, and supports multiple backends for actually running various local models, or connecting to remote models.
+
 
 ## Service and REST API
 
 The main daemon (service) which provides the API, is called `openmodeld`.
-
-See [openmodeld/README.md](openmodeld/README.md) for details on both running this service, and using its REST API.
 
 
 ## Commandline tools
 
 `openmodelctl` is the main commandline tool used for controlling `openmodeld` when it's running. It provides user-friendly, high-level tools for listing models, installing new models, and so on.
 
-See [openmodelctl/README.md](openmodelctl/README.md) for details.
 
+## Rust Libraries
 
-## Library
+- `libopenmodel_frontend` is the Rust client library.  It holds the definitions that the frontend `openmodelctl` and `openmodeld` use to communicate, and that your Rust-based client code can use, too.
+- `libopenmodel_backend` is not for public use.  Rather, it provides low-level internal API shared functionality between `openmodeld` and the backend libraries that implement various AI engines and remote AI servers.
 
-`libopenmodel_shared` is not for public use at this time.  Rather, it provides low-level internal shared functionality between `openmodelctl` and `openmodeld`.  Think of it as the common language that the commandline tool `openmodelctl` shares with the `openmodeld` service/daemon.
+## Compatibility Libraries
+
+- `libopenmodel_frontend_c` is the C-style library for use by C and other C ABI compatible languages.  It's a lightweight wrapper around `libopenmodel_frontend`.
